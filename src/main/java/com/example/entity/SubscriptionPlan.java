@@ -1,0 +1,74 @@
+package com.example.entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "subscription_plans")
+public class SubscriptionPlan {
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private long id;
+	private String name;
+	private Double price;
+	private String description;
+	private Integer durationInDays;
+	
+	public SubscriptionPlan() {}
+
+	public SubscriptionPlan(long id, String name, Double price, String description, Integer durationInDays) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.price = price;
+		this.description = description;
+		this.durationInDays = durationInDays;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Double getPrice() {
+		return price;
+	}
+
+	public void setPrice(Double price) {
+		this.price = price;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public Integer getDurationInDays() {
+		return durationInDays;
+	}
+
+	public void setDurationInDays(Integer durationInDays) {
+		this.durationInDays = durationInDays;
+	}
+	
+	
+	
+}
